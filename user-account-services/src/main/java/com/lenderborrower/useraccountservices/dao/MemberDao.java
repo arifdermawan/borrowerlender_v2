@@ -94,6 +94,14 @@ public class MemberDao implements IMemberDao {
 		return res;
 	}
 
+	@Override
+	public Integer getCountMemberByIdAnActive(Integer id) {
+		// TODO Auto-generated method stub
+		String sql = "select count(id) from cool_db.members where id = ? and is_active = 1";
+		Integer res = jdbcTemplate.queryForObject(sql,Integer.class, id);
+		return res;
+	}
+
 	
 
 }

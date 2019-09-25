@@ -11,4 +11,5 @@ public interface IAccountDao {
 	void createAccount(Account acccount);
 	void updateAccount(Integer id, Integer isActive);
 	Integer getCountAccountById(Integer id);
+	Integer getAccountIsActive(Integer accountId, Integer idMember);
 }

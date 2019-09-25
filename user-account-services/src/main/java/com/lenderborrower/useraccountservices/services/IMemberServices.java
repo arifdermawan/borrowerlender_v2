@@ -12,4 +12,5 @@ public interface IMemberServices {
 	String addMember(MemberRequest member);
 	String updateMember(MemberRequest member);
 	String updateIsActiveMember(Integer id, Integer isActive);
+	Integer getCountMemberByIdAnActive(Integer id);
 }

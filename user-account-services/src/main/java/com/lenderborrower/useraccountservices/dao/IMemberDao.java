@@ -12,4 +12,5 @@ public interface IMemberDao {
 	void updateMember(Member member);
 	void updateMemberIsActive(Integer id, Integer isActive);
 	Integer getCountMemberById(Integer id);
+	Integer getCountMemberByIdAnActive(Integer id);
 }

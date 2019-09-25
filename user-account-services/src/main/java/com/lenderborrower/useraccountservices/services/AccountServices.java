@@ -43,6 +43,13 @@ public class AccountServices implements IAccountServices {
 		}
 		return account;
 	}
+	
+	@Override
+	public Integer checkAccountStatus(Integer id,Integer idMember) {
+		// TODO Auto-generated method stub
+		Integer account = serviceDao.getAccountIsActive(id,idMember);
+		return account;
+	}
 
 	@Override
 	public String addAccount(AccountRequest request) {

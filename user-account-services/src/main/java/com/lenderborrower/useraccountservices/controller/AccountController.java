@@ -70,6 +70,16 @@ public class AccountController {
 		
 	}
 	
+	@ApiOperation(value = "Get Account By Id Akun status is active", response = AccountResponse.class)
+	@GetMapping("account/{id}/member/{idMember}/isactive")
+	public ResponseEntity<Integer> checkAccountActive(
+			@ApiParam(value = "Id Akun", required = true) @PathVariable("id") Integer id,
+			@ApiParam(value = "Id Member", required = true) @PathVariable("idMember") Integer idMember){
+		Integer account = accountServices.checkAccountStatus(id,idMember);
+		return new ResponseEntity<Integer>(account, HttpStatus.OK);
+		
+	}
+	
 	@ApiOperation(value = "Add Account", response = AccountResponse.class)
 	@PostMapping("account")
 	public ResponseEntity<AccountResponse> addAccount(

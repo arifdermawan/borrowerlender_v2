@@ -77,4 +77,11 @@ public class MemberServices  implements IMemberServices{
 		}
 	}
 
+	@Override
+	public Integer getCountMemberByIdAnActive(Integer id) {
+		// TODO Auto-generated method stub
+		Integer getCount = memberDao.getCountMemberByIdAnActive(id);
+		return getCount;
+	}
+
 }

@@ -11,4 +11,5 @@ public interface IAccountServices {
 	Account getAccountById(Integer id);
 	String addAccount(AccountRequest request);
 	String updateAccount(Integer id, Integer isActive);
+	Integer checkAccountStatus(Integer id,Integer idMember);
 }

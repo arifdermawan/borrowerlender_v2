@@ -54,6 +54,13 @@ public class MemberController {
 		return new ResponseEntity<MemberResponse>(response, HttpStatus.OK);
 	}
 	
+	@ApiOperation(value = "Check Member By id active or not", response = MemberResponse.class)
+	@GetMapping("member/{id}/isactive")
+	public ResponseEntity<Integer> checkMemberActive(@PathVariable Integer id) {
+		Integer res = memberServices.getCountMemberByIdAnActive(id);
+		return new ResponseEntity<Integer>(res, HttpStatus.OK);
+	}
+	
 	@ApiOperation(value = "Get Member by kode ", response = MemberResponse.class)
 	@GetMapping("member")
 	public ResponseEntity<MemberResponse> getMemberbyKode(@RequestParam(name = "kode") String kode){

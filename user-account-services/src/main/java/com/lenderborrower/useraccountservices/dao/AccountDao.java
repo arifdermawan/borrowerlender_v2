@@ -48,6 +48,14 @@ public class AccountDao implements IAccountDao {
 			return null;
 		}
 	}
+	
+	@Override
+	public Integer getAccountIsActive(Integer accountId,Integer idMember) {
+		// TODO Auto-generated method stub
+			String sql = "SELECT count(id) FROM cool_db.account where id = ? and is_active = 1 and id_member = ?";
+			Integer res = jdbcTemplate.queryForObject(sql,Integer.class, accountId, idMember);
+			return res;	
+	}
 
 	@Override
 	public void createAccount(Account acccount) {
